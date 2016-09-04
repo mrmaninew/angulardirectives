@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demopod">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="stylesheets/jumbotron-narrow.css" rel="stylesheet">
+</head>
+
+<body ng-controller="mainCtrl">
+    <div class="container">
+        <!-- header -->
+        <header></header>
+        <!-- jumbotron -->
+        <jumbotron></jumbotron>
+        <!-- articles -->
+        <div class="row marketing">
+            <div class="col-lg-6">
+                <list></list>
+            </div>
+            <div class="col-lg-6">
+                <list></list>
+            </div>
+        </div>
+        <!-- interpolate -->
+        <div class="row" style="padding-top:10px">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Interpolate</h3>
+                </div>
+                <div class="panel-body">
+                    <listlength length="{{listLength}}"></listlength>
+                </div>
+            </div>
+        </div>
+        <!-- two-way -->
+        <div class="row" style="padding-top:10px">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Varible as Reference (Two Way binding)</h3>
+                </div>
+                <div class="panel-body">
+                    <h4>Data on controller</h4>
+                    <input type="text" ng-model="someText" />
+                    <br/>
+                    <twoway data="someText"></twoway>
+                </div>
+            </div>
+        </div>
+        <!-- expression -->
+        <div class="row" style="padding-top:10px">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Expression</h3>
+                </div>
+                <div class="panel-body">
+                    <expression show="showLength(len)"></expression>
+                </div>
+            </div>
+        </div>
+        <footer-template></footer-template>
+    </div>
+    <!-- /container -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="javascripts/appFactory.js"></script>
+    <script src="javascripts/appService.js"></script>
+</body>
+
+</html>
