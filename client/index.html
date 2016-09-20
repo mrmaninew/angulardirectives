@@ -10,6 +10,17 @@
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="stylesheets/jumbotron-narrow.css" rel="stylesheet">
+    <link href="bower_components/angular-ui-grid/ui-grid.css" rel="stylesheet">
+    <style type="text/css">
+    .grid {
+        width: 500px;
+        height: 250px;
+    }
+    .customClass .ui-grid,
+    .customClass .ui-grid-viewport {
+        height: auto !important;
+    }
+    </style>
 </head>
 
 <body ng-controller="mainCtrl">
@@ -27,15 +38,15 @@
                 <list></list>
             </div>
         </div>
+        <style ng-if="show">
+        .ui-grid,
+        .ui-grid-viewport {
+            height: auto !important;
+        }
+        </style>
         <!-- interpolate -->
         <div class="row" style="padding-top:10px">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Interpolate</h3>
-                </div>
-                <div class="panel-body">
-                    <listlength length="{{listLength}}"></listlength>
-                </div>
+            <div id="grid1" ui-grid="gridOptions" class="grid">
             </div>
         </div>
         <!-- two-way -->
@@ -68,6 +79,7 @@
     <!-- /container -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
     <script src="app.js"></script>
     <script src="javascripts/appFactory.js"></script>
     <script src="javascripts/appService.js"></script>
