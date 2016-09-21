@@ -128,27 +128,28 @@ angular.module('demopod', ['ui.grid',
             // });
 
             /* Change with row sizes */
-            // angular.element($window).bind('resize', function() {
-            //     if ($window.innerHeight > loadedWinHeight) {
-            //         angular.element(document.getElementsByClassName('grid')[0]).css('height', (250 + ( $scope.myData.length * 34)) + 'px');
-            //     } else if ($window.innerHeight === loadedWinHeight) {
-            //         angular.element(document.getElementsByClassName('grid')[0]).css('height', 250 + 'px');
-            //     } else if ($window.innerHeight < loadedWinHeight) {
-            //         angular.element(document.getElementsByClassName('grid')[0]).css('height', 250 + 'px');
-            //     }
-            // });
-
-            /* style dynamic resize using view port */
             angular.element($window).bind('resize', function() {
-                console.log($window.innerHeight);
                 if ($window.innerHeight > loadedWinHeight) {
-                    $scope.show = true;
-                } else if ($window.innerHeight <= loadedWinHeight) {
-                    $scope.show = false;
-                } else {
-                    $scope.show = false;
+                    angular.element(document.getElementsByClassName('grid')[0]).css('height', ($scope.myData.length * 34) + 'px');
+                } else if ($window.innerHeight === loadedWinHeight) {
+                    angular.element(document.getElementsByClassName('grid')[0]).css('height', 250 + 'px');
+                } else if ($window.innerHeight < loadedWinHeight) {
+                    angular.element(document.getElementsByClassName('grid')[0]).css('height', 250 + 'px');
                 }
             });
+
+
+            /* style dynamic resize using view port */
+            // angular.element($window).bind('resize', function() {
+            //     console.log($window.innerHeight);
+            //     if ($window.innerHeight > loadedWinHeight) {
+            //         $scope.show = true;
+            //     } else if ($window.innerHeight <= loadedWinHeight) {
+            //         $scope.show = false;
+            //     } else {
+            //         $scope.show = false;
+            //     }
+            // });
 
             /* add class and remove class */
             // angular.element($window).bind('resize', function() {
@@ -158,7 +159,6 @@ angular.module('demopod', ['ui.grid',
             //     } else {
             //         angular.element(document.getElementsByClassName('grid')[0]).removeClass('customClass');
             //     }
-
             // });
         }
     ])
