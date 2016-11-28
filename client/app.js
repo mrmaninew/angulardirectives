@@ -162,13 +162,17 @@ angular.module('demopod', ['ui.grid',
             // });
         }
     ])
-    .directive('header', [function() {
+    .directive('header', ['$window','$compile',function($window, $compile) {
         return {
             restrict: 'E',
             scope: {},
             replace: true,
             templateUrl: '/directive/header.html',
-            link: function(scope, element, attr) {}
+            link: function(scope, element, attr) {
+                $(window).on("resize", function() {
+                    $compile(element)(scope);
+                });
+            }
         }
     }])
     .directive('footerTemplate', [function() {
